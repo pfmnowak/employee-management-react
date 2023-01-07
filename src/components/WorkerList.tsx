@@ -1,15 +1,8 @@
+import { Employee } from '../types/types';
 import classes from './WorkerList.module.scss';
 
 type WorkerListProps = {
-	workerList: {
-		firstName: string;
-		lastName: string;
-		department: string;
-		salary: {
-			amount: number;
-			currency: string;
-		};
-	}[];
+	workerList: Employee[];
 };
 
 const WorkerList = (props: WorkerListProps) => {
