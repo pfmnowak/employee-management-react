@@ -7,3 +7,9 @@ export type Employee = {
 		currency: string;
 	};
 };
+
+export type CurrencySum = {
+	[key: string]: {
+		[key: string]: number;
+	};
+};

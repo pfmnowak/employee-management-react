@@ -26,6 +26,16 @@ const MainNavigation = () => {
 				>
 					New Employee
 				</NavLink>
+				<NavLink
+					to='/summary'
+					className={navData =>
+						navData.isActive
+							? `${classes['nav-link']} ${classes['nav-link--active']}`
+							: classes['nav-link']
+					}
+				>
+					Summary
+				</NavLink>
 			</nav>
 		</header>
 	);

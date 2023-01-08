@@ -1,5 +1,6 @@
-import { Employee } from '../types/types';
-import WorkerList from './WorkerList';
+import WorkerList from '../WorkerList';
+import { Employee } from './../../types/types';
+
 import classes from './WorkersContainer.module.scss';
 
 type WorkersContainerProps = {

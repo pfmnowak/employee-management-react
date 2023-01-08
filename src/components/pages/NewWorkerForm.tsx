@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Employee } from '../types/types';
+import { Employee } from './../../types/types';
 import classes from './NewWorkerForm.module.scss';
 
 type NewWorkerFormProps = {

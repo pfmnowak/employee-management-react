@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Navigate, Route } from 'react-router';
 import { Routes } from 'react-router-dom';
-import Layout from './components/Layout';
-import NewWorkerForm from './components/NewWorkerForm';
-import NotFound from './components/NotFound';
-import WorkersContainer from './components/WorkersContainer';
+import Layout from './components/layout/Layout';
+import DepartmentSummary from './components/pages/DepartmentSummary';
+import NewWorkerForm from './components/pages/NewWorkerForm';
+import NotFound from './components/pages/NotFound';
+import WorkersContainer from './components/pages/WorkersContainer';
 import { Employee } from './types/types';
 
 const initialWorkers: Employee[] = [
@@ -214,6 +215,8 @@ function App() {
 						/>
 					}
 				/>
+				<Route path='/summary' element={<DepartmentSummary workerList={workers} />} />
+				Summary
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</Layout>
