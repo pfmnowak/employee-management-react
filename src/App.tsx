@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import classes from './App.module.scss';
+import { Navigate, Route } from 'react-router';
+import { Routes } from 'react-router-dom';
+import Layout from './components/Layout';
 import NewWorkerForm from './components/NewWorkerForm';
+import NotFound from './components/NotFound';
 import WorkersContainer from './components/WorkersContainer';
 import { Employee } from './types/types';
 
@@ -197,16 +200,23 @@ function App() {
 	};
 
 	return (
-		<div className={classes.App}>
-			<header className={classes['App-header']}>
-				<WorkersContainer workers={workers} />
-				<NewWorkerForm
-					onFormSubmit={submitHandler}
-					departments={departmentOptions}
-					currencies={currencyOptions}
+		<Layout>
+			<Routes>
+				<Route path='/' element={<Navigate to='/employees' replace />} />
+				<Route path='/employees' element={<WorkersContainer workers={workers} />} />
+				<Route
+					path='/new-employee'
+					element={
+						<NewWorkerForm
+							onFormSubmit={submitHandler}
+							departments={departmentOptions}
+							currencies={currencyOptions}
+						/>
+					}
 				/>
-			</header>
-		</div>
+				<Route path='*' element={<NotFound />} />
+			</Routes>
+		</Layout>
 	);
 }
 
