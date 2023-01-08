@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import classes from './App.module.scss';
+import NewWorkerForm from './components/NewWorkerForm';
 import WorkersContainer from './components/WorkersContainer';
+import { Employee } from './types/types';
 
-const initialWorkers = [
+const initialWorkers: Employee[] = [
 	{
 		firstName: 'John',
 		lastName: 'Smith',
@@ -173,11 +176,35 @@ const initialWorkers = [
 	},
 ];
 
+const departmentOptions: string[] = [
+	'IT',
+	'Sales',
+	'HR',
+	'Administration',
+	'Marketing',
+	'Finance',
+	'Accounting',
+	'Management',
+];
+
+const currencyOptions: string[] = ['EUR', 'USD', 'PLN'];
+
 function App() {
+	const [workers, setWorkers] = useState(initialWorkers);
+
+	const submitHandler = (worker: Employee) => {
+		setWorkers(prevWorkers => [...prevWorkers, worker]);
+	};
+
 	return (
 		<div className={classes.App}>
 			<header className={classes['App-header']}>
-				<WorkersContainer workers={initialWorkers} />
+				<WorkersContainer workers={workers} />
+				<NewWorkerForm
+					onFormSubmit={submitHandler}
+					departments={departmentOptions}
+					currencies={currencyOptions}
+				/>
 			</header>
 		</div>
 	);
