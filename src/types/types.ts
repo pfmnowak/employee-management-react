@@ -13,3 +13,7 @@ export type CurrencySum = {
 		[key: string]: number;
 	};
 };
+
+export type SearchedEmployee = {
+	[key: string]: string;
+};

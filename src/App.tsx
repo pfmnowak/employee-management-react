@@ -204,7 +204,10 @@ function App() {
 		<Layout>
 			<Routes>
 				<Route path='/' element={<Navigate to='/employees' replace />} />
-				<Route path='/employees' element={<WorkersContainer workers={workers} />} />
+				<Route
+					path='/employees'
+					element={<WorkersContainer workers={workers} departments={departmentOptions} />}
+				/>
 				<Route
 					path='/new-employee'
 					element={
