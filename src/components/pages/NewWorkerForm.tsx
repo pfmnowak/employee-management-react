@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import Card from '../layout/Card';
 import { Employee } from './../../types/types';
 import classes from './NewWorkerForm.module.scss';
 
@@ -33,9 +34,8 @@ const NewWorkerForm = (props: NewWorkerFormProps) => {
 	};
 
 	return (
-		<form className={classes.form} onSubmit={submitFormHandler}>
-			<h1 className={classes.form__header}>New worker form</h1>
-			<div className={classes.form__content}>
+		<Card header='New worker form'>
+			<form className={classes.form} onSubmit={submitFormHandler}>
 				<div className={classes.form__field}>
 					<input
 						type='text'
@@ -127,8 +127,8 @@ const NewWorkerForm = (props: NewWorkerFormProps) => {
 				<button className={classes.form__button} type='submit' id='submit-button'>
 					Add new user
 				</button>
-			</div>
-		</form>
+			</form>
+		</Card>
 	);
 };
 

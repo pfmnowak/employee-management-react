@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { CurrencySum, Employee } from '../../types/types';
+import Card from '../layout/Card';
 import classes from './DepartmentSummary.module.scss';
 
 type DepartmentSummaryProps = {
@@ -20,21 +21,20 @@ const DepartmentSummary = (props: DepartmentSummaryProps) => {
 	}, {});
 
 	return (
-		<div className={classes.summary}>
-			<h1 className={classes.summary__header}>Department Summary</h1>
-			<div className={classes.summary__content}>
+		<Card header='Department Summary'>
+			<div className={classes.summary}>
 				{Object.keys(currencySum)
 					.sort((a, b) => {
 						return ('' + a).localeCompare(b);
 					})
 					.map(cur => {
 						return (
-							<div key={cur} className={classes.summary__department}>
-								<div className={classes.summary__title}>{cur}</div>
-								<div className={classes.summary__currencies}>
+							<div key={cur} className={classes.department}>
+								<div className={classes.department__title}>{cur}</div>
+								<div className={classes.department__currencies}>
 									{Object.keys(currencySum[cur]).map(sum => {
 										return (
-											<div key={sum} className={classes.summary__currency}>
+											<div key={sum} className={classes.department__currency}>
 												{currencySum[cur][sum]} {sum}
 											</div>
 										);
@@ -44,7 +44,7 @@ const DepartmentSummary = (props: DepartmentSummaryProps) => {
 						);
 					})}
 			</div>
-		</div>
+		</Card>
 	);
 };
 
