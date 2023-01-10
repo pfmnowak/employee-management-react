@@ -1,5 +1,6 @@
 import { FormEvent, useReducer } from 'react';
 import AdvancedFilter from '../AdvancedFilter';
+import Card from '../layout/Card';
 import WorkerList from '../WorkerList';
 import { Employee, SearchedEmployee } from './../../types/types';
 import classes from './WorkersContainer.module.scss';
@@ -38,14 +39,17 @@ const WorkersContainer = ({ workers, departments }: WorkersContainerProps) => {
 	};
 
 	return (
-		<div className={classes['workers-container']}>
-			<h1>Workers</h1>
-			<AdvancedFilter
-				searchValue={filterInput}
-				handleChangeValue={filterWorkersHandler}
-				departments={departments}
-			/>
-			<WorkerList workerList={filterWorkers(workers)} />
+		<div className={classes['workers-page']}>
+			<Card header='Workers'>
+				<div className={classes['workers-container']}>
+					<AdvancedFilter
+						searchValue={filterInput}
+						handleChangeValue={filterWorkersHandler}
+						departments={departments}
+					/>
+					<WorkerList workerList={filterWorkers(workers)} />
+				</div>
+			</Card>
 		</div>
 	);
 };
