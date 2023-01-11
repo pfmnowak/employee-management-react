@@ -1,3 +1,5 @@
+@import './../../sass/main.scss';
+
 .form {
 	font-family: 'Overpass', sans-serif;
 	display: flex;
@@ -57,10 +59,17 @@
 		}
 
 		&--search {
-			position: relative;
-			margin-bottom: 0;
+			flex: 0 1 20%;
 			margin: 0 2rem;
-			width: 100%;
+
+			@include respond(tab-port) {
+				flex: 0 1 30%;
+				margin: 1rem 2rem;
+			}
+
+			@include respond(phone) {
+				flex: 0 1 70%;
+			}
 		}
 
 		&__label {
@@ -147,4 +156,6 @@
 .filter-container {
 	padding: 2rem;
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
