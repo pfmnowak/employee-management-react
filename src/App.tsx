@@ -201,16 +201,32 @@ function App() {
 		setWorkers(prevWorkers => [...prevWorkers, worker]);
 	};
 
+	const colorPrimary = '#00ddc2';
+	const colorSecondary = '#1b1b1b';
+	const colorTertiary = '#f2f2f2';
+
 	const theme = createTheme({
 		palette: {
 			primary: {
-				main: '#00ddc2',
+				main: colorPrimary,
 			},
 			secondary: {
-				main: '#1b1b1b',
+				main: colorSecondary,
 			},
 			tertiary: {
-				main: '#f2f2f2',
+				main: colorTertiary,
+			},
+		},
+		components: {
+			MuiDrawer: {
+				styleOverrides: {
+					paper: {
+						boxSizing: 'border-box',
+						background: colorSecondary,
+						color: '#fff',
+						width: 240,
+					},
+				},
 			},
 		},
 	});
