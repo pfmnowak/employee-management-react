@@ -1,3 +1,4 @@
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import { Navigate, Route } from 'react-router';
 import { Routes } from 'react-router-dom';
@@ -200,29 +201,45 @@ function App() {
 		setWorkers(prevWorkers => [...prevWorkers, worker]);
 	};
 
+	const theme = createTheme({
+		palette: {
+			primary: {
+				main: '#00ddc2',
+			},
+			secondary: {
+				main: '#1b1b1b',
+			},
+			tertiary: {
+				main: '#f2f2f2',
+			},
+		},
+	});
+
 	return (
-		<Layout>
-			<Routes>
-				<Route path='/' element={<Navigate to='/employees' replace />} />
-				<Route
-					path='/employees'
-					element={<WorkersContainer workers={workers} departments={departmentOptions} />}
-				/>
-				<Route
-					path='/new-employee'
-					element={
-						<NewWorkerForm
-							onFormSubmit={submitHandler}
-							departments={departmentOptions}
-							currencies={currencyOptions}
-						/>
-					}
-				/>
-				<Route path='/summary' element={<DepartmentSummary workerList={workers} />} />
-				Summary
-				<Route path='*' element={<NotFound />} />
-			</Routes>
-		</Layout>
+		<ThemeProvider theme={theme}>
+			<Layout>
+				<Routes>
+					<Route path='/' element={<Navigate to='/employees' replace />} />
+					<Route
+						path='/employees'
+						element={<WorkersContainer workers={workers} departments={departmentOptions} />}
+					/>
+					<Route
+						path='/new-employee'
+						element={
+							<NewWorkerForm
+								onFormSubmit={submitHandler}
+								departments={departmentOptions}
+								currencies={currencyOptions}
+							/>
+						}
+					/>
+					<Route path='/summary' element={<DepartmentSummary workerList={workers} />} />
+					Summary
+					<Route path='*' element={<NotFound />} />
+				</Routes>
+			</Layout>
+		</ThemeProvider>
 	);
 }
 
