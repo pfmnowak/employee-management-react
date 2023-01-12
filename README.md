@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Used technologies
 
-- React
+- React (React Hooks, React Router v6)
 - TypeScript
 - MUI
 - Eslint & Priettier
