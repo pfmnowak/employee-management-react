@@ -1,3 +1,5 @@
+@import './../../sass/main.scss';
+
 .nav-link {
 	text-decoration: none;
 	display: flex;
@@ -15,10 +17,8 @@
 		background-color: var(--color-grey-dark);
 		color: var(--color-primary);
 	}
-}
 
-@media only screen and (max-width: 37.5em) /* 600px */ {
-	.nav-link {
+	@include respond(phone) {
 		padding: 2rem;
 	}
 }

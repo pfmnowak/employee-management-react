@@ -1,3 +1,5 @@
+@import './../../sass/main.scss';
+
 .workers-page {
 	width: 100%;
 	max-width: 120rem;
@@ -6,10 +8,8 @@
 
 .workers-container {
 	padding: 0 2rem;
-}
 
-@media only screen and (max-width: 37.5em) /* 600px */ {
-	.workers-container {
+	@include respond(phone) {
 		padding: 0;
 	}
 }
