@@ -1,5 +1,5 @@
 import { SearchedEmployee } from '../types/types';
-import classes from './pages/NewWorkerForm.module.scss';
+import classes from './pages/NewEmployeeForm.module.scss';
 
 type AdvancedFilterProps = {
 	departments: string[];

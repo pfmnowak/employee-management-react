@@ -26,7 +26,7 @@ You can also test it live here: https://pfmnowak.github.io/employee-management-r
 - Add Unit Tests
 - Add Login panel
 - Replace a Drawer with a SwipeableDrawer
-- Add Pagination to the table with workers
+- Add Pagination to the table with employees
 - Add successful message (after adding a user)
 - Create backend + database
 - Implement deleting of users

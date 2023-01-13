@@ -1,12 +1,12 @@
 @import './../../sass/main.scss';
 
-.workers-page {
+.employees-page {
 	width: 100%;
 	max-width: 120rem;
 	min-height: 75vh;
 }
 
-.workers-container {
+.employees-container {
 	padding: 0 2rem;
 
 	@include respond(phone) {

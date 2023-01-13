@@ -4,12 +4,12 @@ import Card from '../layout/Card';
 import classes from './DepartmentSummary.module.scss';
 
 type DepartmentSummaryProps = {
-	workerList: Employee[];
+	employeeList: Employee[];
 	children?: ReactNode;
 };
 
 const DepartmentSummary = (props: DepartmentSummaryProps) => {
-	const currencySum: CurrencySum = props.workerList.reduce((accumulator: CurrencySum, item) => {
+	const currencySum: CurrencySum = props.employeeList.reduce((accumulator: CurrencySum, item) => {
 		if (!accumulator[item.department]) {
 			accumulator[item.department] = {};
 		}

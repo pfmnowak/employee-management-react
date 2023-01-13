@@ -1,15 +1,15 @@
 import { useRef } from 'react';
+import { Employee } from '../../types/types';
 import Card from '../layout/Card';
-import { Employee } from './../../types/types';
-import classes from './NewWorkerForm.module.scss';
+import classes from './NewEmployeeForm.module.scss';
 
-type NewWorkerFormProps = {
-	onFormSubmit: (worker: Employee) => void;
+type NewEmployeeFormProps = {
+	onFormSubmit: (employee: Employee) => void;
 	departments: string[];
 	currencies: string[];
 };
 
-const NewWorkerForm = (props: NewWorkerFormProps) => {
+const NewEmployeeForm = (props: NewEmployeeFormProps) => {
 	const firstNameRef = useRef<HTMLInputElement>(null);
 	const lastNameRef = useRef<HTMLInputElement>(null);
 	const departmentRef = useRef<HTMLSelectElement>(null);
@@ -35,7 +35,7 @@ const NewWorkerForm = (props: NewWorkerFormProps) => {
 
 	return (
 		<div className={classes.form__container}>
-			<Card header='New worker form'>
+			<Card header='New employee form'>
 				<form className={classes.form} onSubmit={submitFormHandler}>
 					<div className={classes.form__field}>
 						<input
@@ -134,4 +134,4 @@ const NewWorkerForm = (props: NewWorkerFormProps) => {
 	);
 };
 
-export default NewWorkerForm;
+export default NewEmployeeForm;

@@ -4,12 +4,12 @@ import { Navigate, Route } from 'react-router';
 import { Routes } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import DepartmentSummary from './components/pages/DepartmentSummary';
-import NewWorkerForm from './components/pages/NewWorkerForm';
+import EmployeesContainer from './components/pages/EmployeesContainer';
+import NewEmployeeForm from './components/pages/NewEmployeeForm';
 import NotFound from './components/pages/NotFound';
-import WorkersContainer from './components/pages/WorkersContainer';
 import { Employee } from './types/types';
 
-const initialWorkers: Employee[] = [
+const initialEmployees: Employee[] = [
 	{
 		firstName: 'John',
 		lastName: 'Smith',
@@ -195,10 +195,10 @@ const departmentOptions: string[] = [
 const currencyOptions: string[] = ['EUR', 'USD', 'PLN'];
 
 function App() {
-	const [workers, setWorkers] = useState(initialWorkers);
+	const [employees, setEmployees] = useState(initialEmployees);
 
-	const submitHandler = (worker: Employee) => {
-		setWorkers(prevWorkers => [...prevWorkers, worker]);
+	const submitHandler = (employee: Employee) => {
+		setEmployees(prevEmployees => [...prevEmployees, employee]);
 	};
 
 	const colorPrimary = '#00ddc2';
@@ -238,19 +238,19 @@ function App() {
 					<Route path='/' element={<Navigate to='/employees' replace />} />
 					<Route
 						path='/employees'
-						element={<WorkersContainer workers={workers} departments={departmentOptions} />}
+						element={<EmployeesContainer employees={employees} departments={departmentOptions} />}
 					/>
 					<Route
 						path='/new-employee'
 						element={
-							<NewWorkerForm
+							<NewEmployeeForm
 								onFormSubmit={submitHandler}
 								departments={departmentOptions}
 								currencies={currencyOptions}
 							/>
 						}
 					/>
-					<Route path='/summary' element={<DepartmentSummary workerList={workers} />} />
+					<Route path='/summary' element={<DepartmentSummary employeeList={employees} />} />
 					Summary
 					<Route path='*' element={<NotFound />} />
 				</Routes>

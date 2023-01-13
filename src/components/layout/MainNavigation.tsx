@@ -14,7 +14,7 @@ const MainNavigation = () => {
 	const drawer = (
 		<Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', height: '100%' }}>
 			<Typography variant='h5' sx={{ my: 2 }}>
-				Workers management
+				Employee management
 			</Typography>
 			<Divider />
 			<Box component='nav'>
@@ -74,7 +74,7 @@ const MainNavigation = () => {
 							textAlign: { xs: 'center', sm: 'left' },
 						}}
 					>
-						Workers management
+						Employee management
 					</Typography>
 					<Box component='nav' sx={{ display: { xs: 'none', sm: 'flex' }, alignSelf: 'stretch' }}>
 						<NavLink
