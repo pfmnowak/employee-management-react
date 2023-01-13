@@ -11,36 +11,59 @@ import { Employee } from './types/types';
 
 const initialEmployees: Employee[] = [
 	{
-		firstName: 'John',
-		lastName: 'Smith',
+		firstName: 'Alexandra',
+		lastName: 'Gill',
 		department: 'IT',
-		salary: { amount: 3000, currency: 'USD' },
+		salary: { amount: 3200, currency: 'USD' },
 	},
 	{
-		firstName: 'Jane',
-		lastName: 'Doe',
+		firstName: 'Nicole',
+		lastName: 'May',
 		department: 'IT',
 		salary: { amount: 3000.5, currency: 'USD' },
 	},
 	{
-		firstName: 'Bob',
-		lastName: 'Colman',
+		firstName: 'Cody',
+		lastName: 'Foster',
 		department: 'Sales',
 		salary: { amount: 9000, currency: 'USD' },
 	},
 	{
-		firstName: 'Barbara',
+		firstName: 'Gabrielle',
 		lastName: "O'Connor",
 		department: 'Administration',
 		salary: { amount: 4000, currency: 'EUR' },
 	},
 	{
 		firstName: 'Adam',
-		lastName: 'Murphy',
+		lastName: 'Gross',
 		department: 'Administration',
-		salary: { amount: 2000, currency: 'USD' },
+		salary: { amount: 2500, currency: 'USD' },
 	},
-
+	{
+		firstName: 'Rowan',
+		lastName: 'Howard',
+		department: 'Finance',
+		salary: { amount: 7500, currency: 'USD' },
+	},
+	{
+		firstName: 'Sophie',
+		lastName: 'Morris',
+		department: 'Sales',
+		salary: { amount: 6700, currency: 'USD' },
+	},
+	{
+		firstName: 'Ariana',
+		lastName: 'Douglas',
+		department: 'Finance',
+		salary: { amount: 8400, currency: 'USD' },
+	},
+	{
+		firstName: 'Selena',
+		lastName: 'Parson',
+		department: 'Management',
+		salary: { amount: 9200, currency: 'USD' },
+	},
 	{
 		firstName: 'Kevin',
 		lastName: 'Klein',
