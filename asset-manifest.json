@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/employee-management-react/static/css/main.fb0c882e.css",
-    "main.js": "/employee-management-react/static/js/main.cc11620e.js",
+    "main.css": "/employee-management-react/static/css/main.6d2a189a.css",
+    "main.js": "/employee-management-react/static/js/main.d1eccd80.js",
+    "static/media/404.jpg": "/employee-management-react/static/media/404.291c471e5ac5782df46c.jpg",
     "index.html": "/employee-management-react/index.html",
-    "main.fb0c882e.css.map": "/employee-management-react/static/css/main.fb0c882e.css.map",
-    "main.cc11620e.js.map": "/employee-management-react/static/js/main.cc11620e.js.map"
+    "main.6d2a189a.css.map": "/employee-management-react/static/css/main.6d2a189a.css.map",
+    "main.d1eccd80.js.map": "/employee-management-react/static/js/main.d1eccd80.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb0c882e.css",
-    "static/js/main.cc11620e.js"
+    "static/css/main.6d2a189a.css",
+    "static/js/main.d1eccd80.js"
   ]
 }
